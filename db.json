@@ -1,11 +1,51 @@
 {
-  "posts": [
+  "menu": [
     {
       "id": 1,
-      "title": "hello"
+      "title": "Toma Muestra"
+    },
+    {
+      "id": 2,
+      "title": "Reproceso Producto"
+    },
+    {
+      "id": 3,
+      "title": "Control Stock"
     }
   ],
-  "profile": {
-    "name": "typicode"
+  "pages": [
+  {
+    "pageId": 1,
+    "header": "Ingrese Código Impresora",
+    "controlType":"input",
+    "type": "number",
+    "length": 10,
+    "required": true,
+    "previousPageId": null,
+    "nextPageId": 2,
+    "property": "COD_IMPRESORA"
+  },
+  {
+    "pageId": 2,
+    "header": "Ingrese Envasadora Cabezal",
+    "controlType":"input",
+    "type": "text",
+    "length": 10,
+    "required": true,
+    "previousPageId": 1,
+    "nextPageId": 3,
+    "property":"ENV_CAB"
+  },
+  {
+    "pageId": 3,
+    "header": "Ingrese Cantidad de Muestras",
+    "controlType":"input",
+    "type": "number",
+    "length": 10,
+    "required": true,
+    "previousPageId": 2,
+    "nextPageId": null,
+    "property":"ENV_CAB"
   }
+]
 }
