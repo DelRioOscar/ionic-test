@@ -1,18 +1,23 @@
 {
-  "menu": [
-    {
-      "id": 1,
-      "title": "Toma Muestra"
-    },
-    {
-      "id": 2,
-      "title": "Reproceso Producto"
-    },
-    {
-      "id": 3,
-      "title": "Control Stock"
-    }
-  ],
+  "main": {
+    "menu": [
+      {
+        "id": 1,
+        "title": "Toma Muestra"
+      },
+      {
+        "id": 2,
+        "title": "Reproceso Producto"
+      },
+      {
+        "id": 3,
+        "title": "Control Stock"
+      }
+    ],
+    "menuTitle": "Principal",
+    "wareHouse": "Quinta",
+    "userLogged": "zonbks"
+  },
   "pages": [
     {
       "menuId": 1,
@@ -21,7 +26,9 @@
         "title": "Impresión",
         "body": "¿Desea Reimprimir?",
         "textOk": "Sí",
-        "textCancel": "No"
+        "textCancel": "No",
+        "resourceURI": "/api/TomaMuestra/EnvCabReimprimir",
+        "requestType": "POST"
       },
       "followFlowIf": null,
       "items": [
@@ -36,7 +43,10 @@
           "previousPageId": null,
           "nextPageId": 2,
           "propertyHeader": "COD_IMPRESORA",
-          "propertyBody": "codImpresora"
+          "propertyBody": "codImpresora",
+          "extraBodyContent": null,
+          "resourceURI": "/api/TomaMuestra/EnvImpresora",
+          "requestType": "POST"
         },
         {
           "pageId": 2,
@@ -49,7 +59,10 @@
           "previousPageId": 1,
           "nextPageId": 3,
           "propertyHeader": "ENV_CAB",
-          "propertyBody": "envCab"
+          "propertyBody": "envCab",
+          "extraBodyContent": null,
+          "resourceURI": "/api/TomaMuestra/EnvCabSet",
+          "requestType": "POST"
         },
         {
           "pageId": 3,
@@ -62,7 +75,15 @@
           "previousPageId": 2,
           "nextPageId": null,
           "propertyHeader": "CANTIDAD",
-          "propertyBody": "canMtra"
+          "propertyBody": "canMtra",
+          "extraBodyContent": {
+            "envasadora": "a",
+            "material": "b",
+            "linProc": "c",
+            "cabezal": "d"
+          },
+          "resourceURI": "/api/TomaMuestra/EnvCabCantidad",
+          "requestType": "POST"
         }
       ]
     },
@@ -83,7 +104,10 @@
           "previousPageId": null,
           "nextPageId": 2,
           "propertyHeader": "SALA",
-          "propertyBody": "codSala"
+          "propertyBody": "codSala",
+          "extraBodyContent": null,
+          "resourceURI": "/api/ReprocesoProducto/SalaGet",
+          "requestType": "GET"
         },
         {
           "pageId": 2,
@@ -96,7 +120,10 @@
           "previousPageId": 1,
           "nextPageId": 3,
           "propertyHeader": "MATERIAL-LOTE",
-          "propertyBody": "materialLote"
+          "propertyBody": "materialLote",
+          "extraBodyContent": null,
+          "resourceURI": "/api/ReprocesoProducto/MaterialLoteSet",
+          "requestType": "POST"
         }
       ]
     },
@@ -121,7 +148,10 @@
           "previousPageId": null,
           "nextPageId": 2,
           "propertyHeader": "Movimiento",
-          "propertyBody": "tipoMovimiento"
+          "propertyBody": "tipoMovimiento",
+          "extraBodyContent": null,
+          "resourceURI": "/api/ControlStock/TipoMovimientoGet",
+          "requestType": "GET"
         },
         {
           "pageId": 2,
@@ -134,7 +164,10 @@
           "previousPageId": 1,
           "nextPageId": 3,
           "propertyHeader": "Contenedor",
-          "propertyBody": "codContenedor"
+          "propertyBody": "codContenedor",
+          "extraBodyContent": null,
+          "resourceURI": "/api/ControlStock/ContenedorSet",
+          "requestType": "POST"
         },
         {
           "pageId": 3,
@@ -147,7 +180,10 @@
           "previousPageId": 2,
           "nextPageId": 4,
           "propertyHeader": "Caja",
-          "propertyBody": "codCaja"
+          "propertyBody": "codCaja",
+          "extraBodyContent": null,
+          "resourceURI": "/api/ControlStock/CajaSet",
+          "requestType": "POST"
         },
         {
           "pageId": 4,
@@ -160,7 +196,10 @@
           "previousPageId": 3,
           "nextPageId": 5,
           "propertyHeader": "Lote",
-          "propertyBody": "codMaterialLote"
+          "propertyBody": "codMaterialLote",
+          "extraBodyContent": null,
+          "resourceURI": "/api/ControlStock/MaterialLoteSet",
+          "requestType": "POST"
         },
         {
           "pageId": 5,
@@ -173,7 +212,10 @@
           "previousPageId": 4,
           "nextPageId": null,
           "propertyHeader": "Cantidad",
-          "propertyBody": "cantidad"
+          "propertyBody": "cantidad",
+          "extraBodyContent": null,
+          "resourceURI": "/api/ControlStock/CantidadSet",
+          "requestType": "POST"
         },
         {
           "pageId": 6,
@@ -186,7 +228,10 @@
           "previousPageId": 5,
           "nextPageId": null,
           "propertyHeader": "Salida",
-          "propertyBody": "motivoSalida"
+          "propertyBody": "motivoSalida",
+          "extraBodyContent": null,
+          "resourceURI": "/api/ControlStock/CantidadSet",
+          "requestType": "POST"
         }
       ]
     }
