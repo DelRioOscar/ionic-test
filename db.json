@@ -14,38 +14,181 @@
     }
   ],
   "pages": [
-  {
-    "pageId": 1,
-    "header": "Ingrese Código Impresora",
-    "controlType":"input",
-    "type": "number",
-    "length": 10,
-    "required": true,
-    "previousPageId": null,
-    "nextPageId": 2,
-    "property": "COD_IMPRESORA"
-  },
-  {
-    "pageId": 2,
-    "header": "Ingrese Envasadora Cabezal",
-    "controlType":"input",
-    "type": "text",
-    "length": 10,
-    "required": true,
-    "previousPageId": 1,
-    "nextPageId": 3,
-    "property":"ENV_CAB"
-  },
-  {
-    "pageId": 3,
-    "header": "Ingrese Cantidad de Muestras",
-    "controlType":"input",
-    "type": "number",
-    "length": 10,
-    "required": true,
-    "previousPageId": 2,
-    "nextPageId": null,
-    "property":"ENV_CAB"
-  }
-]
+    {
+      "menuId": 1,
+      "successfulItemId": 1,
+      "rePrint": {
+        "title": "Impresión",
+        "body": "¿Desea Reimprimir?",
+        "textOk": "Sí",
+        "textCancel": "No"
+      },
+      "followFlowIf": null,
+      "items": [
+        {
+          "pageId": 1,
+          "header": "Ingrese Código Impresora",
+          "controlType": "input",
+          "type": "number",
+          "length": 10,
+          "defaultValue": null,
+          "required": true,
+          "previousPageId": null,
+          "nextPageId": 2,
+          "propertyHeader": "COD_IMPRESORA",
+          "propertyBody": "codImpresora"
+        },
+        {
+          "pageId": 2,
+          "header": "Ingrese Envasadora Cabezal",
+          "controlType": "input",
+          "type": "text",
+          "length": 10,
+          "defaultValue": null,
+          "required": true,
+          "previousPageId": 1,
+          "nextPageId": 3,
+          "propertyHeader": "ENV_CAB",
+          "propertyBody": "envCab"
+        },
+        {
+          "pageId": 3,
+          "header": "Ingrese Cantidad de Muestras",
+          "controlType": "input",
+          "type": "number",
+          "length": 10,
+          "defaultValue": null,
+          "required": true,
+          "previousPageId": 2,
+          "nextPageId": null,
+          "propertyHeader": "CANTIDAD",
+          "propertyBody": "canMtra"
+        }
+      ]
+    },
+    {
+      "menuId": 2,
+      "successfulItemId": 2,
+      "rePrint": null,
+      "followFlowIf": null,
+      "items": [
+        {
+          "pageId": 1,
+          "header": "Ingrese Sala",
+          "controlType": "select",
+          "type": null,
+          "length": null,
+          "defaultValue": null,
+          "required": true,
+          "previousPageId": null,
+          "nextPageId": 2,
+          "propertyHeader": "SALA",
+          "propertyBody": "codSala"
+        },
+        {
+          "pageId": 2,
+          "header": "Ingrese Material-Lote",
+          "controlType": "input",
+          "type": "text",
+          "length": 10,
+          "defaultValue": null,
+          "required": true,
+          "previousPageId": 1,
+          "nextPageId": 3,
+          "propertyHeader": "MATERIAL-LOTE",
+          "propertyBody": "materialLote"
+        }
+      ]
+    },
+    {
+      "menuId": 3,
+      "successfulItemId": 2,
+      "rePrint": null,
+      "followFlowIf": {
+        "pageId": 1,
+        "value": "Salida",
+        "startFlowPageId": 6
+      },
+      "items": [
+        {
+          "pageId": 1,
+          "header": "Seleccione Tipo de Movimiento",
+          "controlType": "select",
+          "type": null,
+          "length": null,
+          "defaultValue": null,
+          "required": true,
+          "previousPageId": null,
+          "nextPageId": 2,
+          "propertyHeader": "Movimiento",
+          "propertyBody": "tipoMovimiento"
+        },
+        {
+          "pageId": 2,
+          "header": "Ingrese Contenedor",
+          "controlType": "input",
+          "type": "text",
+          "length": 10,
+          "defaultValue": null,
+          "required": true,
+          "previousPageId": 1,
+          "nextPageId": 3,
+          "propertyHeader": "Contenedor",
+          "propertyBody": "codContenedor"
+        },
+        {
+          "pageId": 3,
+          "header": "Ingrese Caja",
+          "controlType": "input",
+          "type": "text",
+          "length": 10,
+          "defaultValue": null,
+          "required": true,
+          "previousPageId": 2,
+          "nextPageId": 4,
+          "propertyHeader": "Caja",
+          "propertyBody": "codCaja"
+        },
+        {
+          "pageId": 4,
+          "header": "Ingrese Material Lote",
+          "controlType": "input",
+          "type": "text",
+          "length": 10,
+          "defaultValue": null,
+          "required": true,
+          "previousPageId": 3,
+          "nextPageId": 5,
+          "propertyHeader": "Lote",
+          "propertyBody": "codMaterialLote"
+        },
+        {
+          "pageId": 5,
+          "header": "Ingrese Cantidad",
+          "controlType": "input",
+          "type": "number",
+          "length": 10,
+          "defaultValue": 1,
+          "required": true,
+          "previousPageId": 4,
+          "nextPageId": null,
+          "propertyHeader": "Cantidad",
+          "propertyBody": "cantidad"
+        },
+        {
+          "pageId": 6,
+          "header": "Seleccione Motivo de Salida",
+          "controlType": "input",
+          "type": "number",
+          "length": 10,
+          "defaultValue": null,
+          "required": true,
+          "previousPageId": 5,
+          "nextPageId": null,
+          "propertyHeader": "Salida",
+          "propertyBody": "motivoSalida"
+        }
+      ]
+    }
+  ]
 }
